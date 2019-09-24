@@ -91,10 +91,12 @@ def printSpecialLine(filepath):
 result = []
 def processFolder(folderpath, function, type='0'):
     if not os.path.exists(folderpath):
-        return "您输入的路径为" + folderpath + "路径不存在，请检查"
+        print("您输入的路径为" + folderpath + "路径不存在，请检查")
+        return
 
     elif os.path.isfile(folderpath):
-        return "您输入的路径为" + folderpath + "这是一个文件，该模式应输入一个文件夹"
+        print("您输入的路径为" + folderpath + "这是一个文件，该模式应输入一个文件夹")
+        return
 
     filelist = os.listdir(folderpath)
     # 如果是文件，执行输出，如果是文件夹，递归调用
